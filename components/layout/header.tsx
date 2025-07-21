@@ -72,7 +72,7 @@ export function Header() {
             alt="IUT Logo"
             width={40}
             height={40}
-            className="h-10 w-10 rounded-full"
+            className="h-20 w-20 rounded-full"
           />
           </Link>
 
@@ -118,16 +118,16 @@ export function Header() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className=":hidden flex items-center space-x-4">
+          <div className="lg:hidden flex items-center space-x-4">
             {/* Mobile Navigation */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="lg:hidden">
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-15 w-15"/>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="">
-                <nav className="flex flex-col space-y-4 mt-8">
+                <nav className="flex flex-col space-y-4 mt-8 overflow-y-scroll">
                   {navigationItems.map((item) => (
                     <div key={item.title}>
                       <Link

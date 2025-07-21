@@ -159,7 +159,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Slider */}
-      <section className="relative h-screen bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 overflow-hidden">
+      <section className="relative md:h-[80vh] h-[60vh] bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={heroSlides[currentSlide].image || "/placeholder.svg"}
@@ -209,13 +209,13 @@ export default function HomePage() {
 
         <button
           onClick={() => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-orange-300 transition-colors"
+          className="absolute hidden md:block left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-orange-300 transition-colors"
         >
           <ChevronLeft size={48} />
         </button>
         <button
           onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-orange-300 transition-colors"
+          className="absolute hidden md:block right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-orange-300 transition-colors"
         >
           <ChevronRight size={48} />
         </button>

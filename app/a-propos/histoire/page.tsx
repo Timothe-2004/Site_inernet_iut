@@ -58,18 +58,20 @@ export default function HistoirePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 py-20">
-        <div className="container mx-auto md:px-8 px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Histoire & Mission</h1>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+      <section className="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+            Histoire & Mission
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto px-2">
             Découvrez l'histoire de l'IUT, notre évolution et les valeurs qui nous animent
           </p>
-          <div className="flex space-x-2 justify-center">
-            <Button variant="link" className="text-white" asChild>
+          <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
+            <Button variant="link" className="text-white text-sm sm:text-base p-1 sm:p-2" asChild>
               <Link href="/a-propos">À Propos</Link>
             </Button>
-            <span className="text-white">/</span>
-            <Button variant="link" className="text-white" disabled>
+            <span className="text-white text-sm sm:text-base">/</span>
+            <Button variant="link" className="text-white text-sm sm:text-base p-1 sm:p-2" disabled>
               Histoire & Mission
             </Button>
           </div>
@@ -77,23 +79,23 @@ export default function HistoirePage() {
       </section>
 
       {/* Notre Histoire */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto md:px-8 px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Notre Histoire</h2>
-              <p className="text-lg text-gray-600 mb-6">
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-12 sm:mb-16">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">Notre Histoire</h2>
+              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 Fondé en 2001, l'Institut Universitaire de Technologie est né de la volonté de créer un établissement
                 d'enseignement supérieur alliant excellence académique et professionnalisation. Au fil des années, l'IUT
                 s'est développé pour devenir une référence dans la formation de cadres et d'experts dans les domaines de
                 la technologie, de la gestion et du commerce.
               </p>
-              <p className="text-lg text-gray-600">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 Notre croissance constante témoigne de notre capacité à nous adapter aux évolutions du marché du travail
                 et aux besoins des entreprises, tout en maintenant un niveau d'exigence élevé dans nos formations.
               </p>
             </div>
-            <div className="relative h-80 rounded-lg overflow-hidden">
+            <div className="relative h-64 sm:h-80 rounded-lg overflow-hidden order-1 lg:order-2">
               <Image
                 src="/images/decanat.jpeg"
                 alt="Histoire de l'IUT"
@@ -104,23 +106,30 @@ export default function HistoirePage() {
           </div>
 
           {/* Timeline détaillée */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center">Notre Évolution</h2>
-            <div className="space-y-16">
+          <div className="mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 sm:mb-12 text-center">Notre Évolution</h2>
+            <div className="space-y-12 sm:space-y-16">
               {timeline.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col md:flex-row gap-8 ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+                  className={`flex flex-col gap-6 sm:gap-8 ${
+                    index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+                  }`}
                 >
-                  <div className="md:w-1/2">
-                    <div className="relative h-64 rounded-lg overflow-hidden">
-                      <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
+                  <div className="lg:w-1/2">
+                    <div className="relative h-48 sm:h-56 md:h-64 rounded-lg overflow-hidden">
+                      <Image 
+                        src={item.image || "/placeholder.svg"} 
+                        alt={item.title} 
+                        fill 
+                        className="object-cover" 
+                      />
                     </div>
                   </div>
-                  <div className="md:w-1/2 flex flex-col justify-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-2">{item.year}</div>
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">{item.title}</h3>
-                    <p className="text-lg text-gray-600">{item.description}</p>
+                  <div className="lg:w-1/2 flex flex-col justify-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">{item.year}</div>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3 sm:mb-4">{item.title}</h3>
+                    <p className="text-base sm:text-lg text-gray-600 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -130,39 +139,39 @@ export default function HistoirePage() {
       </section>
 
       {/* Notre Mission */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto md:px-8 px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">Notre Mission</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+      <section className="py-12 sm:py-16 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">Notre Mission</h2>
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
               L'IUT a pour mission de former des professionnels compétents, créatifs et responsables, capables de
               relever les défis du monde contemporain et de contribuer positivement à la société.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card>
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Formation d'Excellence</h3>
-                <p className="text-gray-600 mb-4">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+            <Card className="h-full">
+              <CardContent className="p-6 sm:p-8 h-full flex flex-col">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3 sm:mb-4">Formation d'Excellence</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed flex-grow">
                   Nous nous engageons à offrir des formations de haute qualité, alliant théorie et pratique, pour
                   préparer nos étudiants aux exigences du monde professionnel. Nos programmes sont constamment mis à
                   jour pour intégrer les dernières avancées technologiques et les meilleures pratiques du secteur.
                 </p>
-                <p className="text-gray-600">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   Notre approche pédagogique privilégie l'apprentissage par projet, les études de cas réels et les
                   stages en entreprise pour garantir une expérience d'apprentissage complète et pertinente.
                 </p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Recherche & Innovation</h3>
-                <p className="text-gray-600 mb-4">
+            <Card className="h-full">
+              <CardContent className="p-6 sm:p-8 h-full flex flex-col">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3 sm:mb-4">Recherche & Innovation</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed flex-grow">
                   Notre institut s'engage dans la recherche appliquée et fondamentale pour contribuer à l'avancement des
                   connaissances et au développement de solutions innovantes aux défis contemporains.
                 </p>
-                <p className="text-gray-600">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   Nos laboratoires de recherche travaillent en étroite collaboration avec des partenaires industriels et
                   académiques, créant un écosystème d'innovation qui bénéficie à nos étudiants, à nos chercheurs et à la
                   société dans son ensemble.
@@ -171,24 +180,24 @@ export default function HistoirePage() {
             </Card>
           </div>
 
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-6">Nos Valeurs</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">Nos Valeurs</h2>
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
               Ces valeurs fondamentales guident toutes nos actions et décisions au quotidien.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {values.map((value, index) => {
               const IconComponent = value.icon
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-8">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="w-8 h-8 text-blue-600" />
+                <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 h-full">
+                  <CardContent className="p-6 sm:p-8 h-full flex flex-col">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">{value.title}</h3>
-                    <p className="text-gray-600">{value.description}</p>
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 sm:mb-3">{value.title}</h3>
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed flex-grow">{value.description}</p>
                   </CardContent>
                 </Card>
               )
@@ -198,16 +207,18 @@ export default function HistoirePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700">
-        <div className="container mx-auto md:px-8 px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Partagez Notre Vision</h2>
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-600 to-blue-700">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 leading-tight">
+            Partagez Notre Vision
+          </h2>
+          <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
             Rejoignez notre communauté et participez à l'aventure de l'excellence académique et de l'innovation
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-lg mx-auto">
             <Button
               size="lg"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg font-semibold"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold w-full sm:w-auto"
               asChild
             >
               <Link href="/formations">Découvrir nos formations</Link>
@@ -215,7 +226,7 @@ export default function HistoirePage() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-blue-600 hover:bg-blue-500 hover:text-white px-8 py-3 text-lg font-semibold"
+              className="border-white text-white bg-transparent hover:bg-white hover:text-blue-700 px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold w-full sm:w-auto transition-colors duration-300"
               asChild
             >
               <Link href="/contact">Nous contacter</Link>

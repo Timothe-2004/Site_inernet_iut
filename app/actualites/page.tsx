@@ -198,20 +198,6 @@ export default function ActualitesPage() {
           </div>
         </div>
       </section>
-
-      {/* Newsletter Subscription */}
-      <section className="py-16 bg-blue-600">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Restez informé</h2>
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-            Abonnez-vous à notre newsletter pour recevoir toutes nos actualités directement dans votre boîte mail
-          </p>
-          <div className="max-w-md mx-auto flex gap-4">
-            <Input type="email" placeholder="Votre adresse email" className="flex-1" />
-            <Button className="bg-orange-500 hover:bg-orange-600">S'abonner</Button>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

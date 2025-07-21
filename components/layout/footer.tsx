@@ -99,16 +99,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Newsletter</h3>
-            <p className="text-gray-300 text-sm mb-4">Restez informé de nos actualités et événements</p>
-            <div className="space-y-2">
-              <Input type="email" placeholder="Votre email" className="bg-gray-800 border-gray-700 text-white" />
-              <Button className="w-full bg-orange-500 hover:bg-orange-600">S'abonner</Button>
-            </div>
-          </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8">

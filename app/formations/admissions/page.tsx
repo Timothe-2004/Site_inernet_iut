@@ -139,7 +139,7 @@ export default function AdmissionsPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto md:px-8 px-4">
           <Tabs defaultValue="candidature" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-12">
+            <TabsList className="grid w-full md:grid-cols-4 grid-cols-2 mb-12">
               <TabsTrigger value="candidature" className="text-lg">
                 Candidater
               </TabsTrigger>

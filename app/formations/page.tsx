@@ -163,7 +163,7 @@ export default function FormationsPage() {
       <section id="formations" className="py-16 bg-white">
         <div className="container mx-auto md:px-8 px-4">
           <Tabs defaultValue="licences" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-12">
+            <TabsList className="grid w-full md:grid-cols-2 grid-cols mb-12">
               <TabsTrigger value="licences" className="text-lg">
                 Licences (Bac+3)
               </TabsTrigger>
